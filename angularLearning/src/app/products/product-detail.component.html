@@ -1,0 +1,48 @@
+<div class="card">
+    <!--*ngIf='product' : means if product is undefined then below section will not appear in the UI. 
+        In this case no need to do null (?) check in below section-->
+    <div class="card-header" *ngIf='product'>
+        {{pageTitle + ':' + product?.productName}}
+    </div>
+    <div class='card-body'>
+        <table class='table'*ngIf='product'>
+        <tr>
+            <td colspan="2">
+                <img [src]='product.imageUrl'
+                     [title]='product.productName'
+                     [style.width.px]='imageWidth'
+                     [style.margin.px]='imageMargin'>
+              </td>
+        </tr>
+          <tr>
+            <td>Name: </td>
+            <td>{{product.productName}}</td>
+        </tr>  
+        <tr>
+            <td>Code: </td>
+            <td>{{product.productCode | lowercase | convertToSpaces:'-'}}</td>
+        </tr>  
+        <tr>
+            <td>Price: </td>
+            <td>{{product.price}}</td>
+        </tr>  
+        <tr>
+            <td>Release Date: </td>
+            <td>{{product.releaseDate}}</td>
+        </tr>  
+        <tr>
+            <td>Rating: </td>
+            <td>
+                <pm-star [rating]='product.starRating'> </pm-star>
+            </td>
+        </tr>  
+    </table>
+    </div>
+    <div class='card-footer'>
+        <button class='btn btn-outline-secondary'
+                style='width:80px'
+                (click)='onBack()'>
+          <i class='fa fa-chevron-left'></i> Back
+        </button>
+      </div>
+</div>
