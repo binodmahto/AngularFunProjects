@@ -37,5 +37,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Note
 1. Press ctr + c two times to terminate/exit the running application.
-2. ###Run 'npm install' to download all dependency modules (node_modules)
+2. Run 'npm install' to download all dependency modules (node_modules)
 
