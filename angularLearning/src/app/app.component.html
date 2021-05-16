@@ -1,0 +1,12 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+  <a class='navbar-brand'>{{pageTitle}}</a>
+  <ul class='nav nav-pills'>
+    <!--adding router link, value must match with path as provided in app.module-->
+    <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
+    <li><a class='nav-link' routerLink='/products'>Product List</a></li> <!--shortcut ways to define the route-->
+  </ul>
+</nav>
+<div class='container'>
+  <!--This is the container/placeholder to show the selected view-->
+  <router-outlet></router-outlet>
+</div>
